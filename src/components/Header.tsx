@@ -60,35 +60,34 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemoModal }) => {
             ))}
           </nav>
 
-          {/* Zone 3: Primary Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Quick Call Link */}
+          {/* Zone 3: Primary Actions (Clean Icon Buttons + Book Demo CTA) */}
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            {/* Call Icon Button */}
             <a
               href={`tel:${ACADEMY_CONTACT.phoneNumberClean}`}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-[#0a333d] hover:bg-[#0a333d]/5 rounded-lg border border-[#0a333d]/20 transition-colors whitespace-nowrap"
-              title="Call Kabeer Sir"
+              className="w-10 h-10 min-w-[40px] min-h-[40px] inline-flex items-center justify-center rounded-xl text-[#0a333d] hover:text-[#f37021] bg-slate-100 hover:bg-slate-200 border border-slate-200/80 transition-all hover:-translate-y-0.5 active:translate-y-0"
+              title={`Call Kabeer Sir: ${ACADEMY_CONTACT.phoneDisplay}`}
+              aria-label={`Call Kabeer Sir at ${ACADEMY_CONTACT.phoneDisplay}`}
             >
-              <Phone className="w-3.5 h-3.5 text-[#f37021]" />
-              <span className="tabular-nums font-mono">{ACADEMY_CONTACT.phoneDisplay}</span>
+              <Phone className="w-4 h-4 text-[#f37021]" />
             </a>
 
-            {/* Direct WhatsApp Action */}
+            {/* WhatsApp Icon Button */}
             <a
               href={ACADEMY_CONTACT.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 min-h-[40px] text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-sm transition-all hover:shadow hover:-translate-y-0.5 whitespace-nowrap"
-              title="Chat directly on WhatsApp"
+              className="w-10 h-10 min-w-[40px] min-h-[40px] inline-flex items-center justify-center rounded-xl bg-emerald-600 hover:bg-emerald-500 shadow-sm transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0"
+              title="Chat on WhatsApp (961 871 5969)"
+              aria-label="Chat directly on WhatsApp with Kabeer Sir"
             >
-              <MessageCircle className="w-3.5 h-3.5 fill-white text-emerald-600" />
-              <span className="hidden sm:inline">WhatsApp Chat</span>
-              <span className="sm:hidden">WhatsApp</span>
+              <MessageCircle className="w-5 h-5 fill-white text-emerald-600" />
             </a>
 
             {/* Book Free Demo Button */}
             <button
               onClick={onOpenDemoModal}
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] text-xs font-bold text-white bg-[#f37021] hover:bg-[#e05e10] rounded-lg shadow-sm transition-all hover:shadow-orange-500/25 hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] text-xs font-bold text-white bg-[#f37021] hover:bg-[#e05e10] rounded-xl shadow-sm transition-all hover:shadow-orange-500/25 hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>Book Free Demo</span>
@@ -98,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemoModal }) => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="lg:hidden w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
