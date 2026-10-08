@@ -1,1 +1,7 @@
-
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions-v4
