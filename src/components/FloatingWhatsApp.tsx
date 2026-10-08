@@ -70,7 +70,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenDemoMo
       </div>
 
       {/* Mobile Sticky Bottom Action Bar (<15% viewport height, safe-area inset) */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 w-full max-w-full overflow-hidden bg-white/95 backdrop-blur-md border-t border-slate-200/90 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <a
           href={`tel:${ACADEMY_CONTACT.phoneNumberClean}`}
           className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#0a333d] font-bold text-xs transition-colors"
