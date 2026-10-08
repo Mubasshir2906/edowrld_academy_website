@@ -1,0 +1,8 @@
+{
+  "name": "Kabeer Sir's EdWorld Academy",
+  "description": "Official website for Kabeer Sir's EdWorld Academy in Shah Ali Banda, Hyderabad. Coaching for 6th to 10th and Intermediate (MPC, BiPC, CEC, MEC) with Offline & Online classes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
