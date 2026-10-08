@@ -77,17 +77,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemoModal }) => {
               href={ACADEMY_CONTACT.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-sm transition-all hover:shadow hover:-translate-y-0.5 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 min-h-[40px] text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-sm transition-all hover:shadow hover:-translate-y-0.5 whitespace-nowrap"
               title="Chat directly on WhatsApp"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-white text-emerald-600" />
-              <span>WhatsApp Chat</span>
+              <span className="hidden sm:inline">WhatsApp Chat</span>
+              <span className="sm:hidden">WhatsApp</span>
             </a>
 
             {/* Book Free Demo Button */}
             <button
               onClick={onOpenDemoModal}
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-[#f37021] hover:bg-[#e05e10] rounded-lg shadow-sm transition-all hover:shadow-orange-500/25 hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] text-xs font-bold text-white bg-[#f37021] hover:bg-[#e05e10] rounded-lg shadow-sm transition-all hover:shadow-orange-500/25 hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>Book Free Demo</span>
@@ -97,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemoModal }) => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -108,22 +109,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemoModal }) => {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-3 pt-3 border-t border-slate-200 pb-2">
-            <nav className="flex flex-col gap-2.5">
+          <div className="lg:hidden mt-3 pt-3 border-t border-slate-200 pb-3">
+            <nav className="flex flex-col gap-1.5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#f37021] hover:bg-orange-50/60 rounded-md transition-colors"
+                  className="px-3.5 py-3 text-base font-semibold text-slate-700 hover:text-[#f37021] hover:bg-orange-50/60 rounded-xl transition-colors flex items-center justify-between"
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  <span className="text-slate-400 text-xs">→</span>
                 </a>
               ))}
-              <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
+              <div className="pt-3 mt-1 border-t border-slate-100 flex flex-col gap-2">
                 <a
                   href={`tel:${ACADEMY_CONTACT.phoneNumberClean}`}
-                  className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-[#0a333d] bg-slate-100 rounded-lg"
+                  className="flex items-center justify-center gap-2 px-4 py-3 min-h-[46px] text-sm font-bold text-[#0a333d] bg-slate-100 rounded-xl"
                 >
                   <Phone className="w-4 h-4 text-[#f37021]" />
                   <span>Call: {ACADEMY_CONTACT.phoneDisplay}</span>
@@ -133,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemoModal }) => {
                     setMobileMenuOpen(false);
                     onOpenDemoModal();
                   }}
-                  className="w-full py-2.5 px-4 text-sm font-bold text-white bg-[#f37021] hover:bg-[#e05e10] rounded-lg shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 px-4 min-h-[46px] text-sm font-bold text-white bg-[#f37021] hover:bg-[#e05e10] rounded-xl shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Book Free Demo Class</span>

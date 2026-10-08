@@ -129,7 +129,7 @@ export const DemoBookingSection: React.FC = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="e.g. Mohammed Arham"
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021] focus:border-transparent transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021] focus:border-transparent transition-all"
                       />
                     </div>
 
@@ -143,7 +143,7 @@ export const DemoBookingSection: React.FC = () => {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="e.g. 9876543210"
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021] focus:border-transparent transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021] focus:border-transparent transition-all"
                       />
                     </div>
 
@@ -155,7 +155,7 @@ export const DemoBookingSection: React.FC = () => {
                         <select
                           value={grade}
                           onChange={(e) => setGrade(e.target.value)}
-                          className="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
+                          className="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
                         >
                           <option value="6th Standard">6th Standard</option>
                           <option value="7th Standard">7th Standard</option>
@@ -178,7 +178,7 @@ export const DemoBookingSection: React.FC = () => {
                         <select
                           value={mode}
                           onChange={(e) => setMode(e.target.value)}
-                          className="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
+                          className="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
                         >
                           <option value="Offline (Shah Ali Banda)">Offline Classroom (Shah Ali Banda)</option>
                           <option value="Online Interactive">Online Interactive (Live)</option>
@@ -195,13 +195,13 @@ export const DemoBookingSection: React.FC = () => {
                         value={subjectFocus}
                         onChange={(e) => setSubjectFocus(e.target.value)}
                         placeholder="e.g. Maths & Physics / Accountancy"
-                        className="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
+                        className="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#f37021] to-[#e05e10] hover:from-[#ff7e2b] hover:to-[#ea580c] shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full min-h-[48px] py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#f37021] to-[#e05e10] hover:from-[#ff7e2b] hover:to-[#ea580c] shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
                     >
                       <MessageCircle className="w-4 h-4 fill-white text-[#f37021]" />
                       <span>Confirm &amp; Send on WhatsApp</span>

@@ -70,18 +70,18 @@ export const StreamCalculator: React.FC = () => {
         {/* Planner Card */}
         <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           {/* Controls Column (Left) */}
-          <div className="p-6 sm:p-10 lg:col-span-7 bg-white">
-            <h3 className="font-display text-xl font-bold text-[#0a333d] mb-6 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#f37021]" />
+          <div className="p-4 sm:p-10 lg:col-span-7 bg-white">
+            <h3 className="font-display text-lg sm:text-xl font-bold text-[#0a333d] mb-5 sm:mb-6 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-[#f37021] shrink-0" />
               <span>Step 1: Select Academic Category</span>
             </h3>
 
             {/* Level Switcher */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mb-5 sm:mb-6">
               <button
                 type="button"
                 onClick={() => handleLevelChange('school')}
-                className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer ${
+                className={`py-3 px-3 sm:px-4 min-h-[46px] rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer ${
                   level === 'school'
                     ? 'bg-[#0a333d] text-white border-[#0a333d] shadow-sm'
                     : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
@@ -92,18 +92,18 @@ export const StreamCalculator: React.FC = () => {
               <button
                 type="button"
                 onClick={() => handleLevelChange('intermediate')}
-                className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer ${
+                className={`py-3 px-3 sm:px-4 min-h-[46px] rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer ${
                   level === 'intermediate'
                     ? 'bg-[#0a333d] text-white border-[#0a333d] shadow-sm'
                     : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                Intermediate (Junior College)
+                Intermediate
               </button>
             </div>
 
             {/* Grade Selection */}
-            <div className="mb-6">
+            <div className="mb-5 sm:mb-6">
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 Select Class / Year
               </label>
@@ -113,7 +113,7 @@ export const StreamCalculator: React.FC = () => {
                     key={g}
                     type="button"
                     onClick={() => setGrade(g)}
-                    className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+                    className={`px-3.5 py-2.5 min-h-[44px] rounded-lg text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
                       grade === g
                         ? 'bg-[#f37021] text-white border-[#f37021] shadow-sm'
                         : 'bg-white text-slate-700 border-slate-200 hover:border-orange-300'
@@ -126,7 +126,7 @@ export const StreamCalculator: React.FC = () => {
             </div>
 
             {/* Board / Stream Selection */}
-            <div className="mb-6">
+            <div className="mb-5 sm:mb-6">
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 {level === 'school' ? 'Select Educational Board' : 'Select Intermediate Stream'}
               </label>
@@ -136,7 +136,7 @@ export const StreamCalculator: React.FC = () => {
                     key={item}
                     type="button"
                     onClick={() => setBoardOrStream(item)}
-                    className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+                    className={`px-3.5 py-2.5 min-h-[44px] rounded-lg text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
                       boardOrStream === item
                         ? 'bg-[#0a333d] text-white border-[#0a333d] shadow-sm'
                         : 'bg-white text-slate-700 border-slate-200 hover:border-teal-400'
@@ -153,36 +153,36 @@ export const StreamCalculator: React.FC = () => {
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 Preferred Learning Mode
               </label>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                 <button
                   type="button"
                   onClick={() => setMode('Offline')}
-                  className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
+                  className={`p-3 min-h-[48px] rounded-xl border text-left transition-all cursor-pointer ${
                     mode === 'Offline'
                       ? 'bg-amber-50/70 border-amber-400 ring-1 ring-amber-400'
                       : 'bg-white border-slate-200 hover:bg-slate-50'
                   }`}
                 >
-                  <span className="font-display font-bold text-sm text-[#0a333d] block">
+                  <span className="font-display font-bold text-xs sm:text-sm text-[#0a333d] block">
                     Offline Classroom
                   </span>
-                  <span className="text-[11px] text-slate-500">
+                  <span className="text-[10px] sm:text-[11px] text-slate-500">
                     Shah Ali Banda Center
                   </span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setMode('Online')}
-                  className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
+                  className={`p-3 min-h-[48px] rounded-xl border text-left transition-all cursor-pointer ${
                     mode === 'Online'
                       ? 'bg-amber-50/70 border-amber-400 ring-1 ring-amber-400'
                       : 'bg-white border-slate-200 hover:bg-slate-50'
                   }`}
                 >
-                  <span className="font-display font-bold text-sm text-[#0a333d] block">
+                  <span className="font-display font-bold text-xs sm:text-sm text-[#0a333d] block">
                     Online Interactive
                   </span>
-                  <span className="text-[11px] text-slate-500">
+                  <span className="text-[10px] sm:text-[11px] text-slate-500">
                     Live with recording
                   </span>
                 </button>
@@ -191,7 +191,7 @@ export const StreamCalculator: React.FC = () => {
           </div>
 
           {/* Results Summary Column (Right) */}
-          <div className="p-6 sm:p-10 lg:col-span-5 bg-[#0a333d] text-white flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-teal-900">
+          <div className="p-5 sm:p-10 lg:col-span-5 bg-[#0a333d] text-white flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-teal-900">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-teal-800/80 mb-6">
                 <div>

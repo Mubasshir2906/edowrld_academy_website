@@ -34,17 +34,17 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col animate-in fade-in zoom-in-95 duration-200">
         {/* Modal Header */}
-        <div className="bg-[#0a333d] text-white p-6 relative">
+        <div className="bg-[#0a333d] text-white p-5 sm:p-6 relative shrink-0">
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="absolute top-4 right-4 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
             aria-label="Close dialog"
           >
             <X className="w-5 h-5" />
@@ -53,16 +53,16 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
             <Sparkles className="w-3 h-3 text-amber-400" />
             <span>2-Day Free Trial</span>
           </div>
-          <h3 id="modal-title" className="font-display text-2xl font-black text-white">
+          <h3 id="modal-title" className="font-display text-xl sm:text-2xl font-black text-white">
             Book Your Free Demo Class
           </h3>
-          <p className="text-xs text-teal-200 mt-1">
+          <p className="text-xs text-teal-200 mt-0.5">
             Experience Kabeer Sir's teaching firsthand with zero obligation.
           </p>
         </div>
 
         {/* Modal Body */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6 overflow-y-auto">
           {submitted ? (
             <div className="py-6 text-center">
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
@@ -79,14 +79,14 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
                   href={ACADEMY_CONTACT.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-emerald-600 hover:bg-emerald-700 transition-colors"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-emerald-600 hover:bg-emerald-700 transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 fill-white text-emerald-600" />
                   <span>Open WhatsApp</span>
                 </a>
                 <button
                   onClick={onClose}
-                  className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 cursor-pointer"
+                  className="min-h-[44px] px-4 py-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -104,7 +104,7 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Mohammed Arham"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
                 />
               </div>
 
@@ -118,11 +118,11 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="e.g. 9876543210"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">
                     Class / Stream
@@ -130,7 +130,7 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
                   <select
                     value={grade}
                     onChange={(e) => setGrade(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-[#f37021]"
+                    className="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
                   >
                     <option value="6th to 8th Standard">6th to 8th Standard</option>
                     <option value="9th Standard">9th Standard</option>
@@ -151,7 +151,7 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
                   <select
                     value={mode}
                     onChange={(e) => setMode(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-[#f37021]"
+                    className="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f37021]"
                   >
                     <option value="Offline Classroom">Offline (Shah Ali Banda)</option>
                     <option value="Online Live Interactive">Online Interactive</option>
@@ -162,7 +162,7 @@ export const DemoBookingModal: React.FC<DemoBookingModalProps> = ({
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#f37021] to-[#e05e10] hover:from-[#ff7e2b] hover:to-[#ea580c] shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full min-h-[48px] py-3 px-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#f37021] to-[#e05e10] hover:from-[#ff7e2b] hover:to-[#ea580c] shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
                 >
                   <MessageCircle className="w-4 h-4 fill-white text-[#f37021]" />
                   <span>Confirm on WhatsApp (961 871 5969)</span>

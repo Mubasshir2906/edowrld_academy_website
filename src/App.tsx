@@ -39,7 +39,7 @@ export default function App() {
       {/* Top Bar Header */}
       <Header onOpenDemoModal={() => handleOpenDemoModal()} />
 
-      <main className="flex-1">
+      <main className="flex-1 pb-12 sm:pb-0">
         {/* Hero Section with Dynamic Interactive Particles */}
         <HeroSection onOpenDemoModal={() => handleOpenDemoModal()} />
 

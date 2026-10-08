@@ -129,7 +129,7 @@ export const KeyHallmarks: React.FC = () => {
             href={ACADEMY_CONTACT.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white bg-[#f37021] hover:bg-[#e05e10] shadow-md transition-all whitespace-nowrap shrink-0"
+            className="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white bg-[#f37021] hover:bg-[#e05e10] shadow-md transition-all whitespace-nowrap shrink-0 active:scale-[0.98]"
           >
             <span>Inquire Batch Availability</span>
             <ArrowRight className="w-4 h-4" />

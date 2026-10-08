@@ -69,13 +69,13 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenDemoMo
         </a>
       </div>
 
-      {/* Mobile Sticky Bottom Action Bar (<15% viewport height) */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2 flex items-center justify-between gap-2 shadow-2xl">
+      {/* Mobile Sticky Bottom Action Bar (<15% viewport height, safe-area inset) */}
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <a
           href={`tel:${ACADEMY_CONTACT.phoneNumberClean}`}
-          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-slate-100 text-[#0a333d] font-bold text-xs"
+          className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#0a333d] font-bold text-xs transition-colors"
         >
-          <Phone className="w-3.5 h-3.5 text-[#f37021]" />
+          <Phone className="w-4 h-4 text-[#f37021]" />
           <span>Call</span>
         </a>
 
@@ -83,17 +83,17 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenDemoMo
           href={ACADEMY_CONTACT.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-emerald-600 text-white font-bold text-xs shadow-sm"
+          className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-colors"
         >
-          <MessageCircle className="w-3.5 h-3.5 fill-white text-emerald-600" />
+          <MessageCircle className="w-4 h-4 fill-white text-emerald-600" />
           <span>WhatsApp</span>
         </a>
 
         <button
           onClick={onOpenDemoModal}
-          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-[#f37021] text-white font-bold text-xs shadow-sm cursor-pointer"
+          className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 px-2 rounded-xl bg-[#f37021] hover:bg-[#e05e10] text-white font-bold text-xs shadow-sm transition-colors cursor-pointer"
         >
-          <Calendar className="w-3.5 h-3.5" />
+          <Calendar className="w-4 h-4" />
           <span>Free Demo</span>
         </button>
       </div>
